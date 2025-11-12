@@ -1,0 +1,165 @@
+@use './variables' as *;
+
+// Flexbox mixins
+@mixin flex-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@mixin flex-between {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+@mixin flex-column {
+    display: flex;
+    flex-direction: column;
+}
+
+// Responsive breakpoints
+@mixin respond-to-sm {
+    @media (min-width: $breakpoint-sm) {
+        @content;
+    }
+}
+
+@mixin respond-to-md {
+    @media (min-width: $breakpoint-md) {
+        @content;
+    }
+}
+
+@mixin respond-to-lg {
+    @media (min-width: $breakpoint-lg) {
+        @content;
+    }
+}
+
+@mixin respond-to-xl {
+    @media (min-width: $breakpoint-xl) {
+        @content;
+    }
+}
+
+// Transitions
+@mixin transition($property: all, $duration: $transition-normal, $timing: ease-in-out) {
+    transition: $property $duration $timing;
+}
+
+// Shadows
+@mixin shadow-sm {
+    box-shadow: $shadow-sm;
+}
+
+@mixin shadow-md {
+    box-shadow: $shadow-md;
+}
+
+@mixin shadow-lg {
+    box-shadow: $shadow-lg;
+}
+
+@mixin shadow-xl {
+    box-shadow: $shadow-xl;
+}
+
+// Border radius
+@mixin rounded($size: md) {
+    @if $size == sm {
+        border-radius: $radius-sm;
+    } @else if $size == md {
+        border-radius: $radius-md;
+    } @else if $size == lg {
+        border-radius: $radius-lg;
+    } @else if $size == xl {
+        border-radius: $radius-xl;
+    } @else if $size == full {
+        border-radius: $radius-full;
+    }
+}
+
+// Typography
+@mixin text-truncate {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+@mixin text-clamp($lines: 2) {
+    display: -webkit-box;
+    -webkit-line-clamp: $lines;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+// Scrollbar styling
+@mixin custom-scrollbar($width: 8px, $track-color: #f1f1f1, $thumb-color: #888) {
+    &::-webkit-scrollbar {
+        width: $width;
+        height: $width;
+    }
+
+    &::-webkit-scrollbar-track {
+        background: $track-color;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background: $thumb-color;
+        border-radius: $radius-full;
+
+        &:hover {
+            background: darken($thumb-color, 10%);
+        }
+    }
+}
+
+// Focus states
+@mixin focus-ring($color: $primary-500, $offset: 2px) {
+    outline: none;
+    box-shadow: 0 0 0 $offset rgba($color, 0.5);
+}
+
+// Card styling
+@mixin card($padding: $spacing-md, $radius: $radius-lg, $shadow: $shadow-md) {
+    background: white;
+    padding: $padding;
+    border-radius: $radius;
+    box-shadow: $shadow;
+}
+
+// Overlay
+@mixin overlay($opacity: 0.5, $color: #000) {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba($color, $opacity);
+    z-index: 1000;
+}
+
+// Animation
+@mixin animate($name, $duration: 0.3s, $timing: ease-in-out, $delay: 0s) {
+    animation: $name $duration $timing $delay;
+}
+
+// Hover effect
+@mixin hover-lift {
+    transition:
+        transform $transition-normal,
+        box-shadow $transition-normal;
+
+    &:hover {
+        transform: translateY(-2px);
+        box-shadow: $shadow-lg;
+    }
+}
+
+// Disabled state
+@mixin disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    pointer-events: none;
+}

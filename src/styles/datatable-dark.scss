@@ -1,0 +1,166 @@
+// PrimeVue DataTable Dark Mode Styles
+.dark {
+    .p-datatable {
+        background: rgb(17, 24, 39); // gray-900 - darker background
+        color: rgb(243, 244, 246); // gray-100
+
+        .p-datatable-header {
+            background: rgb(17, 24, 39); // gray-900
+            border-color: rgb(55, 65, 81); // gray-700
+            color: rgb(243, 244, 246);
+        }
+
+        .p-datatable-thead > tr > th {
+            background: rgb(31, 41, 55) !important; // gray-800 - darker header
+            border-color: rgb(55, 65, 81) !important; // gray-700
+            color: rgb(255, 255, 255) !important; // white - bright for readability
+            font-weight: 600;
+
+            &.p-sortable-column {
+                background: rgb(31, 41, 55) !important; // gray-800 - ensure sortable columns are dark
+                color: rgb(255, 255, 255) !important;
+
+                &:hover {
+                    background: rgb(55, 65, 81) !important; // gray-700 - lighter on hover
+                }
+
+                &.p-highlight {
+                    background: rgb(55, 65, 81) !important; // gray-700 - when sorted
+                }
+            }
+        }
+
+        // Direct targeting for all th elements
+        th {
+            background: rgb(31, 41, 55) !important;
+            color: rgb(255, 255, 255) !important;
+            border-color: rgb(55, 65, 81) !important;
+        }
+
+        // Direct targeting for all tr elements in thead
+        thead > tr {
+            background: rgb(31, 41, 55) !important;
+        }
+
+        .p-datatable-tbody > tr {
+            background: rgb(17, 24, 39) !important; // gray-900 - darker background for all rows
+            color: rgb(255, 255, 255) !important; // white - bright text for all rows
+
+            &:nth-child(even) {
+                background: rgb(31, 41, 55) !important; // gray-800 - striped rows slightly lighter
+            }
+
+            &:hover {
+                background: rgb(55, 65, 81) !important; // gray-700 - hover lighter
+                color: rgb(255, 255, 255) !important; // white text on hover
+            }
+
+            &.p-highlight {
+                background: rgb(37, 99, 235) !important; // primary-600 for selected
+                color: rgb(255, 255, 255) !important; // white text
+            }
+
+            > td {
+                background: inherit !important; // inherit from parent tr
+                border-color: rgb(55, 65, 81) !important; // gray-700 - darker borders
+                color: rgb(255, 255, 255) !important; // white - ensure all cell text is bright
+            }
+        }
+
+        // Direct targeting for all tr elements in tbody
+        tbody > tr {
+            background: rgb(17, 24, 39) !important; // gray-900 - dark background
+            color: rgb(255, 255, 255) !important;
+        }
+
+        tbody > tr:nth-child(even) {
+            background: rgb(31, 41, 55) !important; // gray-800 - striped rows
+        }
+
+        tbody > tr:hover {
+            background: rgb(55, 65, 81) !important; // gray-700 - hover state
+        }
+
+        // Direct targeting for all td elements in tbody
+        tbody > tr > td {
+            background: inherit !important; // inherit from tr
+            color: rgb(255, 255, 255) !important;
+            border-color: rgb(55, 65, 81) !important;
+        }
+
+        tbody > tr:nth-child(even) > td {
+            background: inherit !important; // inherit striped background
+        }
+
+        tbody > tr:hover > td {
+            background: inherit !important; // inherit hover background
+        }
+
+        // Catch-all for any tr elements not covered above
+        tr {
+            background: rgb(17, 24, 39) !important;
+            color: rgb(255, 255, 255) !important;
+
+            &:nth-child(even) {
+                background: rgb(31, 41, 55) !important;
+            }
+
+            &:hover {
+                background: rgb(55, 65, 81) !important;
+            }
+        }
+
+        .p-datatable-footer {
+            background: rgb(17, 24, 39); // gray-900 - darker footer
+            border-color: rgb(55, 65, 81);
+            color: rgb(243, 244, 246);
+        }
+
+        .p-paginator {
+            background: rgb(17, 24, 39); // gray-900 - darker paginator
+            color: rgb(243, 244, 246);
+            border-color: rgb(55, 65, 81);
+
+            .p-paginator-page,
+            .p-paginator-next,
+            .p-paginator-prev,
+            .p-paginator-first,
+            .p-paginator-last {
+                color: rgb(209, 213, 219); // gray-300
+
+                &:not(.p-disabled):hover {
+                    background: rgb(31, 41, 55); // gray-800 - darker hover
+                    color: rgb(243, 244, 246);
+                }
+
+                &.p-highlight {
+                    background: rgb(37, 99, 235); // primary-600
+                    color: white;
+                }
+            }
+
+            .p-dropdown {
+                background: rgb(31, 41, 55); // gray-800 - darker dropdown
+                border-color: rgb(55, 65, 81); // gray-700
+                color: rgb(243, 244, 246);
+
+                .p-dropdown-trigger {
+                    color: rgb(209, 213, 219);
+                }
+            }
+        }
+
+        .p-datatable-emptymessage {
+            color: rgb(156, 163, 175); // gray-400
+        }
+
+        .p-column-filter-menu-button,
+        .p-column-filter-clear-button {
+            color: rgb(209, 213, 219);
+
+            &:hover {
+                color: rgb(243, 244, 246);
+            }
+        }
+    }
+}

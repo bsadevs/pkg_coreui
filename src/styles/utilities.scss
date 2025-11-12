@@ -1,0 +1,324 @@
+@use './variables' as *;
+
+// Spacing utilities
+.m-0 {
+    margin: 0;
+}
+.m-auto {
+    margin: auto;
+}
+.mt-auto {
+    margin-top: auto;
+}
+.mr-auto {
+    margin-right: auto;
+}
+.mb-auto {
+    margin-bottom: auto;
+}
+.ml-auto {
+    margin-left: auto;
+}
+
+.p-0 {
+    padding: 0;
+}
+
+// Display utilities
+.d-none {
+    display: none;
+}
+.d-block {
+    display: block;
+}
+.d-inline {
+    display: inline;
+}
+.d-inline-block {
+    display: inline-block;
+}
+.d-flex {
+    display: flex;
+}
+.d-grid {
+    display: grid;
+}
+
+// Flexbox utilities
+.flex-row {
+    flex-direction: row;
+}
+.flex-column {
+    flex-direction: column;
+}
+.flex-wrap {
+    flex-wrap: wrap;
+}
+.flex-nowrap {
+    flex-wrap: nowrap;
+}
+.flex-grow-0 {
+    flex-grow: 0;
+}
+.flex-grow-1 {
+    flex-grow: 1;
+}
+.flex-shrink-0 {
+    flex-shrink: 0;
+}
+.flex-shrink-1 {
+    flex-shrink: 1;
+}
+
+.justify-start {
+    justify-content: flex-start;
+}
+.justify-end {
+    justify-content: flex-end;
+}
+.justify-center {
+    justify-content: center;
+}
+.justify-between {
+    justify-content: space-between;
+}
+.justify-around {
+    justify-content: space-around;
+}
+
+.align-start {
+    align-items: flex-start;
+}
+.align-end {
+    align-items: flex-end;
+}
+.align-center {
+    align-items: center;
+}
+.align-baseline {
+    align-items: baseline;
+}
+.align-stretch {
+    align-items: stretch;
+}
+
+// Text utilities
+.text-left {
+    text-align: left;
+}
+.text-center {
+    text-align: center;
+}
+.text-right {
+    text-align: right;
+}
+.text-justify {
+    text-align: justify;
+}
+
+.text-uppercase {
+    text-transform: uppercase;
+}
+.text-lowercase {
+    text-transform: lowercase;
+}
+.text-capitalize {
+    text-transform: capitalize;
+}
+
+.text-truncate {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.text-nowrap {
+    white-space: nowrap;
+}
+.text-wrap {
+    white-space: normal;
+}
+
+// Font weight
+.font-light {
+    font-weight: 300;
+}
+.font-normal {
+    font-weight: 400;
+}
+.font-medium {
+    font-weight: 500;
+}
+.font-semibold {
+    font-weight: 600;
+}
+.font-bold {
+    font-weight: 700;
+}
+
+// Position utilities
+.position-static {
+    position: static;
+}
+.position-relative {
+    position: relative;
+}
+.position-absolute {
+    position: absolute;
+}
+.position-fixed {
+    position: fixed;
+}
+.position-sticky {
+    position: sticky;
+}
+
+// Width utilities
+.w-100 {
+    width: 100%;
+}
+.w-auto {
+    width: auto;
+}
+.w-fit {
+    width: fit-content;
+}
+
+// Height utilities
+.h-100 {
+    height: 100%;
+}
+.h-auto {
+    height: auto;
+}
+.h-fit {
+    height: fit-content;
+}
+
+// Overflow utilities
+.overflow-auto {
+    overflow: auto;
+}
+.overflow-hidden {
+    overflow: hidden;
+}
+.overflow-visible {
+    overflow: visible;
+}
+.overflow-scroll {
+    overflow: scroll;
+}
+
+.overflow-x-auto {
+    overflow-x: auto;
+}
+.overflow-y-auto {
+    overflow-y: auto;
+}
+
+// Cursor utilities
+.cursor-pointer {
+    cursor: pointer;
+}
+.cursor-default {
+    cursor: default;
+}
+.cursor-not-allowed {
+    cursor: not-allowed;
+}
+
+// Opacity utilities
+.opacity-0 {
+    opacity: 0;
+}
+.opacity-25 {
+    opacity: 0.25;
+}
+.opacity-50 {
+    opacity: 0.5;
+}
+.opacity-75 {
+    opacity: 0.75;
+}
+.opacity-100 {
+    opacity: 1;
+}
+
+// Z-index utilities
+.z-0 {
+    z-index: 0;
+}
+.z-10 {
+    z-index: 10;
+}
+.z-20 {
+    z-index: 20;
+}
+.z-30 {
+    z-index: 30;
+}
+.z-40 {
+    z-index: 40;
+}
+.z-50 {
+    z-index: 50;
+}
+
+// Visibility utilities
+.visible {
+    visibility: visible;
+}
+.invisible {
+    visibility: hidden;
+}
+
+// Shadow utilities
+.shadow-none {
+    box-shadow: none;
+}
+.shadow-sm {
+    box-shadow: $shadow-sm;
+}
+.shadow-md {
+    box-shadow: $shadow-md;
+}
+.shadow-lg {
+    box-shadow: $shadow-lg;
+}
+.shadow-xl {
+    box-shadow: $shadow-xl;
+}
+
+// Rounded utilities
+.rounded-none {
+    border-radius: 0;
+}
+.rounded-sm {
+    border-radius: $radius-sm;
+}
+.rounded-md {
+    border-radius: $radius-md;
+}
+.rounded-lg {
+    border-radius: $radius-lg;
+}
+.rounded-xl {
+    border-radius: $radius-xl;
+}
+.rounded-full {
+    border-radius: $radius-full;
+}
+
+// Transition utilities
+.transition-none {
+    transition: none;
+}
+.transition-all {
+    transition: all $transition-normal;
+}
+.transition-fast {
+    transition: all $transition-fast;
+}
+.transition-slow {
+    transition: all $transition-slow;
+}

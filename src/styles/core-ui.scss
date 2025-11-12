@@ -1,0 +1,132 @@
+// Import base styles
+@use './variables' as *;
+@use './mixins' as *;
+@use './base';
+@use './utilities';
+@use './datatable-dark';
+@use './dark-mode-comprehensive';
+
+// Import Tailwind CSS
+@import './tailwind.css';
+
+// PrimeVue theme customizations
+.p-datatable {
+    @apply rounded-lg border border-gray-200;
+
+    .p-datatable-header {
+        @apply bg-gray-50 border-b border-gray-200;
+    }
+
+    .p-datatable-thead > tr > th {
+        @apply bg-gray-50 text-gray-700 font-semibold;
+        padding: 1rem;
+    }
+
+    .p-datatable-tbody > tr {
+        @apply hover:bg-gray-50 transition-colors;
+
+        &.p-highlight {
+            @apply bg-primary-50;
+        }
+
+        > td {
+            padding: 1rem;
+        }
+    }
+
+    .p-paginator {
+        @apply border-t border-gray-200 bg-white;
+    }
+}
+
+// Component-specific styles
+.bsa-input {
+    &:focus {
+        @include focus-ring($primary-500);
+    }
+}
+
+.bsa-button {
+    @include transition(all, $transition-fast);
+    @include rounded(md);
+
+    &:hover:not(:disabled) {
+        @include hover-lift;
+    }
+
+    &:disabled {
+        @include disabled;
+    }
+}
+
+.bsa-card {
+    @include card($spacing-lg, $radius-lg, $shadow-md);
+
+    &:hover.hoverable {
+        @include shadow-lg;
+    }
+}
+
+.bsa-modal-overlay {
+    @include overlay(0.5);
+    @include flex-center;
+}
+
+// Animation keyframes
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideInUp {
+    from {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideInDown {
+    from {
+        transform: translateY(-20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+// Utility animations
+.animate-fade-in {
+    @include animate(fadeIn, 0.3s);
+}
+
+.animate-slide-in-up {
+    @include animate(slideInUp, 0.3s);
+}
+
+.animate-slide-in-down {
+    @include animate(slideInDown, 0.3s);
+}
+
+.animate-spin {
+    @include animate(spin, 1s, linear, 0s);
+    animation-iteration-count: infinite;
+}

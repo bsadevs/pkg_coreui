@@ -1,0 +1,178 @@
+@use './variables' as *;
+@use './mixins' as *;
+
+// Reset & Base styles
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-family: $font-family-base;
+    font-size: 16px;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+    color: #1f2937;
+    background-color: #ffffff;
+    transition:
+        background-color 0.3s ease,
+        color 0.3s ease;
+}
+
+// Dark mode support for html and body
+html.dark,
+html.dark body {
+    color: #f3f4f6; // gray-100
+    background-color: #111827; // gray-900
+}
+
+// Dark mode support for #app container
+html.dark #app {
+    background-color: #111827; // gray-900
+    color: #f3f4f6; // gray-100
+}
+
+// Typography
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: 600;
+    line-height: 1.2;
+    margin-bottom: 0.5rem;
+}
+
+h1 {
+    font-size: $font-size-3xl;
+}
+h2 {
+    font-size: $font-size-2xl;
+}
+h3 {
+    font-size: $font-size-xl;
+}
+h4 {
+    font-size: $font-size-lg;
+}
+h5 {
+    font-size: $font-size-base;
+}
+h6 {
+    font-size: $font-size-sm;
+}
+
+p {
+    margin-bottom: 1rem;
+}
+
+// Links
+a {
+    color: $primary-600;
+    text-decoration: none;
+    transition: color $transition-fast;
+
+    &:hover {
+        color: $primary-700;
+        text-decoration: underline;
+    }
+}
+
+// Dark mode links
+html.dark a {
+    color: #60a5fa; // primary-400
+
+    &:hover {
+        color: #93c5fd; // primary-300
+    }
+}
+
+// Lists
+ul,
+ol {
+    list-style: none;
+}
+
+// Images
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+// Buttons
+button {
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+    cursor: pointer;
+    border: none;
+    background: none;
+}
+
+// Inputs
+input,
+textarea,
+select {
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+}
+
+// Focus visible
+:focus-visible {
+    outline: 2px solid $primary-500;
+    outline-offset: 2px;
+}
+
+// Selection
+::selection {
+    background-color: $primary-200;
+    color: $primary-900;
+}
+
+// Dark mode selection
+html.dark ::selection {
+    background-color: #1e40af; // primary-800
+    color: #dbeafe; // primary-100
+}
+
+// Scrollbar
+::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: $secondary-100;
+}
+
+::-webkit-scrollbar-thumb {
+    background: $secondary-400;
+    border-radius: $radius-full;
+
+    &:hover {
+        background: $secondary-500;
+    }
+}
+
+// Dark mode scrollbar
+html.dark ::-webkit-scrollbar-track {
+    background: #1f2937; // gray-800
+}
+
+html.dark ::-webkit-scrollbar-thumb {
+    background: #4b5563; // gray-600
+
+    &:hover {
+        background: #6b7280; // gray-500
+    }
+}

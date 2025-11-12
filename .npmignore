@@ -1,0 +1,20 @@
+# Source files
+src/
+playground/
+*.config.*
+tsconfig*.json
+vite.config.ts
+vitest.config.ts
+
+# Development files
+*.log
+*.local
+.idea/
+**/*.spec.ts
+**/*.test.ts
+
+# Asb
+*.env
+*.dev
+*.key
+temp

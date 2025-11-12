@@ -1,0 +1,455 @@
+// ==========================================
+// COMPREHENSIVE DARK MODE STYLES
+// Ensures NO white backgrounds appear in dark mode
+// ==========================================
+
+.dark {
+    // ==========================================
+    // 1. BASE ELEMENTS - Catch all generic elements
+    // ==========================================
+
+    // Global background fallback
+    background-color: rgb(17, 24, 39); // gray-900
+    color: rgb(243, 244, 246); // gray-100
+
+    // Ensure all divs, sections, and containers have dark backgrounds by default
+    div,
+    section,
+    article,
+    aside,
+    main,
+    header,
+    footer,
+    nav {
+        &:not([class*='bg-']) {
+            background-color: transparent;
+        }
+    }
+
+    // ==========================================
+    // 2. FORM ELEMENTS - All input types
+    // ==========================================
+
+    // Text inputs and textareas
+    input[type='text'],
+    input[type='email'],
+    input[type='password'],
+    input[type='number'],
+    input[type='tel'],
+    input[type='url'],
+    input[type='search'],
+    textarea {
+        background-color: rgb(55, 65, 81) !important; // gray-700
+        color: rgb(243, 244, 246) !important; // gray-100
+        border-color: rgb(75, 85, 99) !important; // gray-600
+
+        &::placeholder {
+            color: rgb(156, 163, 175) !important; // gray-400
+        }
+
+        &:focus {
+            background-color: rgb(55, 65, 81) !important; // gray-700
+            border-color: rgb(59, 130, 246) !important; // primary-500
+        }
+
+        &:disabled,
+        &[readonly] {
+            background-color: rgb(31, 41, 55) !important; // gray-800
+            color: rgb(156, 163, 175) !important; // gray-400
+        }
+    }
+
+    // Date and time inputs
+    input[type='date'],
+    input[type='datetime-local'],
+    input[type='time'],
+    input[type='month'],
+    input[type='week'] {
+        background-color: rgb(55, 65, 81) !important; // gray-700
+        color: rgb(243, 244, 246) !important; // gray-100
+        border-color: rgb(75, 85, 99) !important; // gray-600
+        color-scheme: dark; // This makes native date picker use dark theme
+
+        &::-webkit-calendar-picker-indicator {
+            filter: invert(1); // Makes the calendar icon visible
+        }
+
+        &:focus {
+            background-color: rgb(55, 65, 81) !important; // gray-700
+            border-color: rgb(59, 130, 246) !important; // primary-500
+        }
+    }
+
+    // Select elements and their options
+    select {
+        background-color: rgb(55, 65, 81) !important; // gray-700
+        color: rgb(243, 244, 246) !important; // gray-100
+        border-color: rgb(75, 85, 99) !important; // gray-600
+
+        &:focus {
+            background-color: rgb(55, 65, 81) !important; // gray-700
+            border-color: rgb(59, 130, 246) !important; // primary-500
+        }
+
+        option {
+            background-color: rgb(55, 65, 81) !important; // gray-700
+            color: rgb(243, 244, 246) !important; // gray-100
+
+            &:disabled {
+                color: rgb(156, 163, 175) !important; // gray-400
+            }
+        }
+    }
+
+    // ==========================================
+    // 3. MODALS & OVERLAYS
+    // ==========================================
+
+    // Modal backgrounds
+    .bsa-modal-overlay,
+    [class*='modal'],
+    [class*='dialog'] {
+        .bg-white:not([class*='dark:bg-']) {
+            background-color: rgb(31, 41, 55) !important; // gray-800
+        }
+    }
+
+    // Ensure modal content areas are dark
+    [role='dialog'],
+    [aria-modal='true'] {
+        background-color: rgb(31, 41, 55) !important; // gray-800
+        color: rgb(243, 244, 246) !important; // gray-100
+
+        // Any white backgrounds inside modals should be dark
+        .bg-white {
+            background-color: rgb(31, 41, 55) !important; // gray-800
+        }
+    }
+
+    // ==========================================
+    // 4. CARDS & CONTAINERS
+    // ==========================================
+
+    .bsa-card,
+    [class*='card'] {
+        background-color: rgb(31, 41, 55) !important; // gray-800
+        border-color: rgb(55, 65, 81) !important; // gray-700
+
+        .bsa-card-header,
+        .bsa-card-body,
+        .bsa-card-footer {
+            background-color: inherit !important;
+            color: rgb(243, 244, 246) !important;
+        }
+    }
+
+    // ==========================================
+    // 5. PRIMEVUE COMPONENTS - Complete coverage
+    // ==========================================
+
+    // DataTable - Extended coverage
+    .p-datatable {
+        background-color: rgb(17, 24, 39) !important; // gray-900
+        color: rgb(243, 244, 246) !important;
+
+        // All possible table elements
+        table {
+            background-color: rgb(17, 24, 39) !important;
+        }
+
+        thead,
+        tbody,
+        tfoot {
+            background-color: inherit !important;
+        }
+
+        th,
+        td {
+            background-color: inherit !important;
+            border-color: rgb(55, 65, 81) !important;
+            color: rgb(243, 244, 246) !important;
+        }
+
+        // Table wrapper
+        .p-datatable-wrapper {
+            background-color: rgb(17, 24, 39) !important;
+        }
+
+        // Table content
+        .p-datatable-table {
+            background-color: rgb(17, 24, 39) !important;
+        }
+    }
+
+    // Dropdown menus (for filters, pagination, etc.)
+    .p-dropdown,
+    .p-dropdown-panel {
+        background-color: rgb(55, 65, 81) !important; // gray-700
+        color: rgb(243, 244, 246) !important;
+        border-color: rgb(75, 85, 99) !important;
+
+        .p-dropdown-items {
+            background-color: rgb(55, 65, 81) !important;
+        }
+
+        .p-dropdown-item {
+            background-color: rgb(55, 65, 81) !important;
+            color: rgb(243, 244, 246) !important;
+
+            &:hover {
+                background-color: rgb(75, 85, 99) !important; // gray-600
+            }
+
+            &.p-highlight {
+                background-color: rgb(59, 130, 246) !important; // primary-500
+                color: white !important;
+            }
+        }
+    }
+
+    // PrimeVue Input fields
+    .p-inputtext {
+        background-color: rgb(55, 65, 81) !important; // gray-700
+        color: rgb(243, 244, 246) !important;
+        border-color: rgb(75, 85, 99) !important;
+
+        &:focus {
+            background-color: rgb(55, 65, 81) !important;
+            border-color: rgb(59, 130, 246) !important;
+        }
+    }
+
+    // Calendar/Date picker popup
+    .p-datepicker,
+    .p-calendar-panel {
+        background-color: rgb(55, 65, 81) !important; // gray-700
+        color: rgb(243, 244, 246) !important;
+        border-color: rgb(75, 85, 99) !important;
+
+        table {
+            background-color: rgb(55, 65, 81) !important;
+
+            td {
+                background-color: rgb(55, 65, 81) !important;
+
+                span {
+                    color: rgb(243, 244, 246) !important;
+
+                    &:hover {
+                        background-color: rgb(75, 85, 99) !important; // gray-600
+                    }
+                }
+
+                &.p-datepicker-today span {
+                    background-color: rgb(59, 130, 246) !important; // primary-500
+                    color: white !important;
+                }
+            }
+        }
+
+        .p-datepicker-header {
+            background-color: rgb(55, 65, 81) !important;
+            border-color: rgb(75, 85, 99) !important;
+            color: rgb(243, 244, 246) !important;
+        }
+    }
+
+    // Menu and context menus
+    .p-menu,
+    .p-contextmenu {
+        background-color: rgb(55, 65, 81) !important; // gray-700
+        border-color: rgb(75, 85, 99) !important;
+
+        .p-menuitem-link {
+            background-color: rgb(55, 65, 81) !important;
+            color: rgb(243, 244, 246) !important;
+
+            &:hover {
+                background-color: rgb(75, 85, 99) !important; // gray-600
+            }
+        }
+    }
+
+    // Tooltip
+    .p-tooltip {
+        background-color: rgb(31, 41, 55) !important; // gray-800
+        color: rgb(243, 244, 246) !important;
+
+        .p-tooltip-text {
+            background-color: rgb(31, 41, 55) !important;
+            color: rgb(243, 244, 246) !important;
+        }
+    }
+
+    // Overlay Panel
+    .p-overlaypanel {
+        background-color: rgb(55, 65, 81) !important; // gray-700
+        border-color: rgb(75, 85, 99) !important;
+        color: rgb(243, 244, 246) !important;
+
+        .p-overlaypanel-content {
+            background-color: rgb(55, 65, 81) !important;
+            color: rgb(243, 244, 246) !important;
+        }
+    }
+
+    // Sidebar
+    .p-sidebar {
+        background-color: rgb(31, 41, 55) !important; // gray-800
+        color: rgb(243, 244, 246) !important;
+
+        .p-sidebar-content {
+            background-color: rgb(31, 41, 55) !important;
+        }
+    }
+
+    // ==========================================
+    // 6. CATCH-ALL RULES - Nuclear option
+    // ==========================================
+
+    // Ensure any element with explicit white background uses dark instead
+    // This is a catch-all for any missed elements
+    *:not(.bg-white):not([style*='background-color: white']):not([style*='background: white']) {
+        &.bg-white {
+            background-color: rgb(31, 41, 55) !important; // gray-800
+        }
+    }
+
+    // ==========================================
+    // 7. FORM WRAPPER ELEMENTS
+    // ==========================================
+
+    .bsa-form,
+    .bsa-form-body,
+    form {
+        background-color: transparent !important;
+        color: rgb(243, 244, 246) !important;
+    }
+
+    // ==========================================
+    // 8. PAGE BACKGROUNDS
+    // ==========================================
+
+    .bsa-page-container {
+        background-color: transparent !important;
+        color: rgb(243, 244, 246) !important;
+    }
+
+    // ==========================================
+    // 9. NATIVE BROWSER ELEMENTS
+    // ==========================================
+
+    // Checkbox and radio buttons
+    input[type='checkbox'],
+    input[type='radio'] {
+        background-color: rgb(55, 65, 81) !important;
+        border-color: rgb(75, 85, 99) !important;
+
+        &:checked {
+            background-color: rgb(59, 130, 246) !important; // primary-500
+            border-color: rgb(59, 130, 246) !important;
+        }
+    }
+
+    // File inputs
+    input[type='file'] {
+        background-color: rgb(55, 65, 81) !important;
+        color: rgb(243, 244, 246) !important;
+
+        &::file-selector-button {
+            background-color: rgb(75, 85, 99) !important; // gray-600
+            color: rgb(243, 244, 246) !important;
+            border-color: rgb(107, 114, 128) !important; // gray-500
+        }
+    }
+
+    // Range inputs
+    input[type='range'] {
+        background-color: rgb(55, 65, 81) !important;
+
+        &::-webkit-slider-thumb {
+            background-color: rgb(59, 130, 246) !important; // primary-500
+        }
+
+        &::-moz-range-thumb {
+            background-color: rgb(59, 130, 246) !important;
+        }
+    }
+
+    // Progress bars
+    progress {
+        background-color: rgb(55, 65, 81) !important;
+
+        &::-webkit-progress-bar {
+            background-color: rgb(55, 65, 81) !important;
+        }
+
+        &::-webkit-progress-value {
+            background-color: rgb(59, 130, 246) !important;
+        }
+
+        &::-moz-progress-bar {
+            background-color: rgb(59, 130, 246) !important;
+        }
+    }
+
+    // ==========================================
+    // 10. UTILITY OVERRIDES
+    // ==========================================
+
+    // Override any stray utility classes that might set white backgrounds
+    .bg-gray-50 {
+        background-color: rgb(31, 41, 55) !important; // gray-800 instead
+    }
+
+    .bg-gray-100 {
+        background-color: rgb(55, 65, 81) !important; // gray-700 instead
+    }
+
+    // ==========================================
+    // 11. SCROLLBARS (WebKit browsers)
+    // ==========================================
+
+    ::-webkit-scrollbar {
+        width: 12px;
+        height: 12px;
+        background-color: rgb(17, 24, 39); // gray-900
+    }
+
+    ::-webkit-scrollbar-track {
+        background-color: rgb(17, 24, 39); // gray-900
+    }
+
+    ::-webkit-scrollbar-thumb {
+        background-color: rgb(75, 85, 99); // gray-600
+        border-radius: 6px;
+        border: 2px solid rgb(17, 24, 39); // gray-900
+
+        &:hover {
+            background-color: rgb(107, 114, 128); // gray-500
+        }
+    }
+
+    // ==========================================
+    // 12. AUTOCOMPLETE DROPDOWNS (Browser native)
+    // ==========================================
+
+    input:-webkit-autofill,
+    input:-webkit-autofill:hover,
+    input:-webkit-autofill:focus,
+    input:-webkit-autofill:active {
+        -webkit-box-shadow: 0 0 0 30px rgb(55, 65, 81) inset !important;
+        -webkit-text-fill-color: rgb(243, 244, 246) !important;
+        caret-color: rgb(243, 244, 246) !important;
+    }
+}
+
+// ==========================================
+// 13. ENSURE HTML/BODY are dark in dark mode
+// ==========================================
+
+html.dark,
+html.dark body {
+    background-color: rgb(17, 24, 39) !important; // gray-900
+    color: rgb(243, 244, 246) !important; // gray-100
+}

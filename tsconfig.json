@@ -1,0 +1,25 @@
+{
+    "compilerOptions": {
+        "declaration": true,
+        "declarationDir": "dist/types",
+        "emitDeclarationOnly": true,
+        "outDir": "dist",
+        "module": "ESNext",
+        "target": "ESNext",
+        "moduleResolution": "Node",
+        "strict": true,
+        "esModuleInterop": true,
+        "jsx": "preserve",
+        "jsxImportSource": "vue",
+        "paths": {
+            "@/*": ["./src/*"]
+        },
+        "skipLibCheck": true,
+        "useDefineForClassFields": true,
+        "allowImportingTsExtensions": true,
+        "resolveJsonModule": true,
+        "isolatedModules": true
+    },
+    "include": ["src/**/*.ts", "src/**/*.vue"],
+    "exclude": ["node_modules", "dist", "playground"]
+}
