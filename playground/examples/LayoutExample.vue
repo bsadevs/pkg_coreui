@@ -1,8 +1,6 @@
 <script setup lang="ts">
 import { ref } from 'vue';
-import { BsaContainer, BsaCard, BsaSection, BsaButtonDefault, BsaButtonIcon, BsaIcons } from '@/components';
-import { Apple } from 'lucide-vue-next';
-import { iconsMap } from '@/components/base/icons/iconsMap';
+import { BsaContainer, BsaCard, BsaSection, BsaButtonDefault, BsaButtonIcon } from '@/components';
 
 
 const breadcrumbs = [{ label: 'Home', to: '/' }, { label: 'Dashboard' }];
@@ -68,28 +66,6 @@ const activities = [
             <BsaButtonIcon icon="RotateCw" tooltip="Refresh" />
             <BsaButtonDefault label="New Item" icon="Plus" />
         </template>
-
-        <BsaCard title="Icons">
-            <div class="grid grid-cols-6 gap-4">
-                <div v-for="(Icon, name) in iconsMap" :key="name" class="flex flex-col items-center gap-1">
-                    <component :is="Icon" class="w-6 h-6 text-blue-500" />
-                    <span class="text-xs text-gray-700">{{ name }}</span>
-                </div>
-            </div>
-            <div class="flex gap-2">
-                Tailwind inline →
-                <Apple class="w-6 h-6 text-yellow-500" />
-                BsaIcons defaults →
-                <BsaIcons icon="Home" />
-                <BsaIcons icon="Home" color="text-blue-500" />
-                <BsaIcons icon="Home" size="w-5 h-5" color="text-green-500" />
-                <BsaIcons icon="User" />
-                <BsaIcons icon="ErrorName" color="text-red-500" />
-                BsaIcons with import →
-                <BsaIcons :icon="Apple" />
-            </div>
-        </BsaCard>
-
         <!--Statistics Cards-->
         <BsaSection title=" Statistics" spacing="lg">
             <div class="grid grid-cols-1 md:grid-cols-3 gap-4">

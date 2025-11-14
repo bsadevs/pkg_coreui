@@ -7,9 +7,10 @@ import ModalExample from './examples/ModalExample.vue';
 import FormExample from './examples/FormExample.vue';
 import TableExample from './examples/TableExample.vue';
 import LoadingExample from './examples/LoadingExample.vue';
+import IconsExample from './examples/IconsExample.vue';
 import { Sun, Moon } from 'lucide-vue-next';
 
-const tabs = ['Layout', 'Buttons', 'Inputs', 'Modal', 'Form', 'Table', 'Loading'];
+const tabs = ['Layout', 'Icons', 'Buttons', 'Inputs', 'Modal', 'Form', 'Table', 'Loading'];
 const activeTab = ref('Layout');
 const isTransitioning = ref(false);
 const nextTabLabel = ref('');
@@ -45,7 +46,7 @@ const toggleDarkMode = () => {
             <div class="max-w-full sm:max-w-7xl mx-auto px-2 sm:px-4 lg:px-8">
                 <div class="flex flex-wrap md:flex-nowrap justify-between h-16 items-center gap-2">
                     <div class="flex items-center gap-2">
-                        <h1 class="text-2xl font-bold text-primary-600">BSA Core UI</h1>
+                        <h1 class="text-2xl font-bold text-primary-600">BsaCoreui</h1>
                         <span :class="['text-sm', isDarkMode ? 'text-gray-400' : 'text-gray-500']">Component
                             Playground</span>
                     </div>
@@ -74,6 +75,7 @@ const toggleDarkMode = () => {
                 <FormExample v-else-if="activeTab === 'Form'" />
                 <ModalExample v-else-if="activeTab === 'Modal'" />
                 <LayoutExample v-else-if="activeTab === 'Layout'" />
+                <IconsExample v-else-if="activeTab === 'Icons'" />
                 <InputsExample v-else-if="activeTab === 'Inputs'" />
                 <ButtonsExample v-else-if="activeTab === 'Buttons'" />
                 <LoadingExample v-else-if="activeTab === 'Loading'" />
