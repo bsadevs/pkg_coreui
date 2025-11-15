@@ -19,5 +19,5 @@ const IconComponent = computed(() => {
 
 <template>
     <component v-if="IconComponent" :is="IconComponent"
-        :class="`${props.size || 'w-6 h-6'} ${props.color || 'text-blue-700'}`" />
+        :class="`${props.size || 'w-6 h-6'} ${props.color || 'text-white-700'}`" />
 </template>
