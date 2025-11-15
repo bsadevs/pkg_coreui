@@ -1,35 +1,40 @@
-# BSA Core UI
+# Bsa CoreUI Components Documentation
 
-A Vue 3 + TypeScript + TailwindCSS component library for building modern CRUD applications quickly and consistently.
+## 🚀 Overview
 
-## 🚀 Features
-
-- Ready-to-use **CRUD Components** for Create, Read, Update, Delete
-- Fully typed **Vue 3 + TypeScript** for better developer experience
-- **TailwindCSS** styling with full customization
-- **PrimeVue Integration** for advanced DataTable support
-- Built-in **Form Validation** via composables
-- **Responsive Design** for mobile-first layouts
-- **Reusable Composables** and **Utility Functions**
-
-### Included Components & Utilities
-
-- **Base Components**: Buttons, Icons, Inputs, Loading, Modals
-- **Form Components**: BsaForm, Form Header/Footer, Form Rows, Registration Form
-- **Layout Components**: Cards, Containers, Sections
-- **Table Components**: DataTable with sorting/filtering, Table Actions
-- **Composables**: CRUD operations, Form validation & model, Table filters & persistence, Modal handling
-- **Utilities**: Formatters (currency, date, string), Validators (field, form)
+Bsa CoreUI is a collection of reusable Vue 3 components designed for building modern web interfaces. Components are organized by feature type and include avatars, calendars, charts, forms, notifications, tables, menus, and timelines. Each component includes a dedicated `index.ts` for centralized exports.
 
 ## 📦 Installation
 
 ```bash
-npm install @bsa/coreui
+npm install @bsasolutions/coreui
 # or
-yarn add @bsa/coreui
+yarn add @bsasolutions/coreui
 # or
-pnpm add @bsa/coreui
+pnpm add @bsasolutions/coreui
 ```
+
+---
+
+## 🛠️ Quick Start
+
+```bash
+import { BsaAvatar, BsaChartBar } from '@bsasolutions/coreui';
+```
+
+## 🎨 Customization
+
+All components use TailwindCSS classes and can be easily customized through Tailwind configuration or by overriding component classes.
+
+## 🙏 Credits
+
+Built with:
+
+- [Vue 3](https://vuejs.org/)
+- [TypeScript](https://www.typescriptlang.org/)
+- [TailwindCSS](https://tailwindcss.com/)
+- [PrimeVue](https://primevue.org/)
+- [Vite](https://vitejs.dev/)
 
 ## 📝 Documentation
 
