@@ -1,3 +1,15 @@
+<p align="center">
+<img src="public/logo.png" alt="Bsa Solutions Logo" width="30"/>
+<span style="font-size:36px; font-weight:bold;">Bsa Solutions</span>
+</p>
+<div align="center">
+
+[![Components](https://img.shields.io/badge/Components-green)](./docs/Components.md)
+[![Playground](https://img.shields.io/badge/Playground-purple)](./docs/Playground.md)
+[![License](https://img.shields.io/badge/License-MIT-red)](./LICENSE)
+[![Npm version](https://img.shields.io/badge/npm-v1.0.0-blue)](https://www.npmjs.com)
+
+</div>
 # Bsa CoreUI Components Documentation
 
 ## 🚀 Overview
